@@ -1,0 +1,63 @@
+ body {
+            width: 100% ;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff   ;
+        }
+        
+.montserrat-serrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  }
+
+
+        .title {
+        font-size: 50px;
+        text-decoration: underline;
+        color: @#orange;    
+        background-color: #3333;    
+        }   
+
+
+        ul {
+            background-color: #3333;
+            color: white;
+            padding: 10px
+        }
+        p {
+            color: #00eb6a33;
+        }
+        .white-text {
+            color: rgb(255, 255, 255);
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #333;
+            color: rgb(255, 255, 255);
+            padding: 1rem;
+        }
+        .sidebar {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+            width: 200px;
+            padding: 1rem;
+        }
+        .main-content {
+            width: 100%;
+            float: left;
+            padding: 10px;
+        }
+        .footer {
+            background-color: #3333;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 1rem;
+        }
