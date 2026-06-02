@@ -16,7 +16,7 @@ body {
   letter-spacing: 0.5px;
   margin: 0;
   background: #f5f5f5;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.6s ease;
 
 }
@@ -115,11 +115,13 @@ body.fade-out {
   position: center;
   object-fit: cover;
   display: block;
+  gap: 30px;
+  padding: 0 0 30px;
 }
 
 .img-full2 {
   width: 100%;
-  height: 140vh;
+  height: 90vh;
   position: center;
   object-fit: cover;
   display: block;
@@ -133,6 +135,20 @@ body.fade-out {
   display: flex;
   flex-direction: row-reverse;
 }
+
+.fila-regeneracion{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:flex-start;
+    width:100%;
+    gap:40px;
+}
+
+
+.columna-izquierda{
+    flex:0 0 35%;
+}
 .imagenizquierda {
   width: 90%;
 }
@@ -142,14 +158,37 @@ body.fade-out {
 }
 .imagenderecha img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  height: auto;
+  display: block;
 }
 
 .imagenizquierda img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.imagenderecha2{
+    flex:0 0 60%;
+}
+
+.imagenderecha2 img{
+    width:100%;
+    height:auto;
+    display:block;
+}
+
+
+.imagenizquierda2{
+   display: flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.imagenizquierda2 img{
+    width:100%;
+    height:auto;
+    display:block;
 }
 
 .btn-cambiar {
@@ -310,16 +349,16 @@ h2 {
 
 
 p {
-  max-width: 800px;
+  max-width: 1000px;
   line-height: 1;
-  font-size : 14px;
+  font-size : 17px;
   margin: 10px;
 }
 
 .p2 {
   max-width: 100%;
   line-height: 1;
-  font-size : 14px;
+  font-size : 17px;
   margin: 10px;
   margin-top: 50px;
   margin-bottom: 50px;
@@ -342,6 +381,25 @@ p {
   margin-top: 140px;
   margin-right: 150px;
 }
+.textoizquierda2 {
+  width: 30%;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  margin-right: 150px;
+}
+
+.textoizquierda3 {
+  width: 70%;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  margin-right: 150px;
+}
 
 .proyecto {
   margin-top: 80px;
@@ -357,9 +415,6 @@ p {
  
 }
 
-html {
-  scroll-behavior: smooth;
-}
 
 
 .item:hover img {
@@ -400,4 +455,99 @@ html {
 .texto {
   width: 40%;
   max-width: 500px;
+}
+
+
+html{
+    scroll-behavior:smooth;
+    scroll-snap-type:y proximity;
+}
+
+
+
+
+/* capa de transición */
+.page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #f5f5f5;
+  z-index: 9999;
+
+  transform: scale(0.8);
+  opacity: 0;
+  pointer-events: none;
+
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.8s ease;
+}
+
+.page-transition.active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.zoom-image {
+  position: fixed;
+  z-index: 10000;
+  object-fit: cover;
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.zoom-clone {
+  position: fixed;
+  z-index: 9999;
+  object-fit: cover;
+  transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: top, left, width, height;
+    filter: blur(0px);
+}
+
+.zoom-transition {
+  position: fixed;
+  z-index: 99999;
+  object-fit: cover;
+  transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, width, height, top, left;
+}
+
+.zoom-clone.zooming {
+  filter: blur(6px);
+}
+ 
+.fade-content {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.fade-out {
+  opacity: 0 !important;
+  transition: opacity 0.6s ease;
+}
+
+.grid,
+h1 {
+  transition: opacity 0.6s ease;
+}
+
+
+.a1 {
+  width: 100vw;
+  height: auto;
+  display: block;
+  position: relative;
+}
+
+
+.snap-section{
+    scroll-margin-top:80px;
+}
+
+.snap-point{
+    position:absolute;
+    top:50%;
+    left:0;
+    width:1px;
+    height:1px;
 }
